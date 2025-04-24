@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../css/style.css';
 
-function ExpenseForm() {
+function ExpenseForm({ onAddExpense }) {
   const [formData, setFormData] = useState({
     title: '',
     amount: '',
@@ -29,11 +29,10 @@ function ExpenseForm() {
     }
 
     setError('');
-    console.log('Data sendt:', formData);
 
-    // TODO: Send data til parent
+    // Send data til App.jsx via props
+    onAddExpense(formData);
 
-    
     // Reset skjema
     setFormData({
       title: '',
