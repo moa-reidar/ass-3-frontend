@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './css/reset.css';
 import './css/variables.css';
 import './css/style.css';
 import ExpenseForm from './components/ExpenseForm';
 
+//Leser fra localStorage ved oppstart
 function App() {
   const [expenses, setExpenses] = useState(() => {
     const storedExpenses = localStorage.getItem('expenses');
     return storedExpenses ? JSON.parse(storedExpenses) : [];
   });
-
-  // Legger til nye utgifter
+// Legger til nye utgifter
   const handleAddExpense = (expenseData) => {
     const newExpense = {
       ...expenseData,
@@ -19,6 +19,10 @@ function App() {
     setExpenses((prev) => [newExpense, ...prev]);
     console.log('Lagret utgift:', newExpense);
   };
+
+  useEffect(() => {
+    localStorage.setItem('expenses', JSON.stringify(expenses));
+  }, []); 
 
   return (
     <div className="app">
