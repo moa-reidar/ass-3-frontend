@@ -1,4 +1,5 @@
 import React from 'react';
+import ExpenseItem from './ExpenseItem';
 
 function ExpenseList({ expenses }) {
   return (
@@ -11,8 +12,12 @@ function ExpenseList({ expenses }) {
         <ul className="expense-list__items">
           {expenses.map((expense) => (
             <li key={expense.id}>
-              {/* Placeholder. husk at denne byttes ut med ExpenseItem senere */}
-              <p>{expense.title} - {expense.amount} kr</p>
+              <ExpenseItem
+                title={expense.title}
+                amount={expense.amount}
+                date={expense.date}
+                category={expense.category}
+              />
             </li>
           ))}
         </ul>
