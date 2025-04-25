@@ -4,7 +4,8 @@ import './css/variables.css';
 import './css/style.css';
 
 import ExpenseForm from './components/ExpenseForm';
-import ExpenseList from './components/ExpenseList'; 
+import ExpenseList from './components/ExpenseList';
+import TotalExpense from './components/TotalExpense'; 
 
 function App() {
   // Leser fra localStorage ved oppstart
@@ -31,7 +32,8 @@ function App() {
     <div className="app">
       <h1 className="app__title">Expense Tracker</h1>
       <ExpenseForm onAddExpense={handleAddExpense} />
-      <ExpenseList expenses={expenses} /> {/* burdevise utgiftene her */}
+      <ExpenseList expenses={expenses} />
+      <TotalExpense expenses={expenses} /> {/*del som viser totalsum*/}
     </div>
   );
 }
