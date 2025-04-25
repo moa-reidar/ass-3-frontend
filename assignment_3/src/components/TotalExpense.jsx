@@ -8,7 +8,7 @@ function TotalExpense({ expenses }) {
   return (
     <div className="total-expense">
       <h2 className="total-expense__title">Totalt brukt</h2>
-      <p className="total-expense__amount">{total} kr</p>
+      <p className="total-expense__amount">{total.toFixed(2)} kr</p>
     </div>
   );
 }
