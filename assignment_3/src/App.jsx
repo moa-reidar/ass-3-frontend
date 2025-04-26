@@ -42,10 +42,10 @@ function App() {
 
   // Filtrerer utgifter basert på måned og kategori
   const filteredExpenses = expenses.filter((expense) => {
-    const expenseMonth = expense.date; 
+    const expenseMonth = expense.date.slice(5, 7); 
     const matchesMonth = filters.month === '' || expenseMonth === filters.month;
     const matchesCategory = filters.category === '' || expense.category === filters.category;
-    return matchesMonth & matchesCategory;
+    return matchesMonth && matchesCategory;
   });
 
   return (
