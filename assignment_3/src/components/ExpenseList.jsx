@@ -1,7 +1,7 @@
 import React from 'react';
 import ExpenseItem from './ExpenseItem';
 
-function ExpenseList({ expenses }) {
+function ExpenseList({ expenses, onDeleteExpense, onEditExpense }) {
   return (
     <section className="expense-list">
       <h2 className="expense-list__title">Dine utgifter</h2>
@@ -13,10 +13,13 @@ function ExpenseList({ expenses }) {
           {expenses.map((expense) => (
             <li key={expense.id}>
               <ExpenseItem
+                id={expense.id}
                 title={expense.title}
                 amount={expense.amount}
                 date={expense.date}
                 category={expense.category}
+                onDelete={onDeleteExpense} 
+                onEdit={onEditExpense}     
               />
             </li>
           ))}
