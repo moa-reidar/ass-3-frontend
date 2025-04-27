@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../css/style.css';
 
-function ExpenseForm({ onAddExpense }) {
+function ExpenseForm({ onAddExpense, editExpense }) {
   const [formData, setFormData] = useState({
     title: '',
     amount: '',
@@ -22,7 +22,6 @@ function ExpenseForm({ onAddExpense }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validering
     if (!formData.title || !formData.amount || !formData.date || !formData.category) {
       setError('Alle felt må fylles ut');
       return;
@@ -30,10 +29,8 @@ function ExpenseForm({ onAddExpense }) {
 
     setError('');
 
-    // Send data til App.jsx via props
     onAddExpense(formData);
 
-    // Reset skjema
     setFormData({
       title: '',
       amount: '',
@@ -44,8 +41,8 @@ function ExpenseForm({ onAddExpense }) {
 
   return (
     <form className="expense-form" onSubmit={handleSubmit}>
-      <h2 className="expense-form__title">Legg til utgift</h2>
-
+      <h2 className="expense-form__title">Legg til utgift</h2> 
+      
       {error && <p className="expense-form__error">{error}</p>}
 
       <div className="expense-form__group">
@@ -100,7 +97,7 @@ function ExpenseForm({ onAddExpense }) {
         </select>
       </div>
 
-      <button type="submit" className="expense-form__submit">Lagre utgift</button>
+      <button type="submit" className="expense-form__submit">Lagre utgift</button> 
     </form>
   );
 }
