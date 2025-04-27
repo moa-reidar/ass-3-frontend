@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../css/style.css';
 
 function ExpenseForm({ onAddExpense, editExpense }) {
@@ -10,6 +10,18 @@ function ExpenseForm({ onAddExpense, editExpense }) {
   });
 
   const [error, setError] = useState('');
+
+  // Når editExpense endres, fyll inn skjemaet automatisk
+  useEffect(() => {
+    if (editExpense) {
+      setFormData({
+        title: editExpense.title,
+        amount: editExpense.amount,
+        date: editExpense.date,
+        category: editExpense.category,
+      });
+    }
+  }, [editExpense]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -41,8 +53,10 @@ function ExpenseForm({ onAddExpense, editExpense }) {
 
   return (
     <form className="expense-form" onSubmit={handleSubmit}>
-      <h2 className="expense-form__title">Legg til utgift</h2> 
-      
+      <h2 className="expense-form__title">
+        {editExpense ? 'Rediger utgift' : 'Legg til utgift'}
+      </h2>
+
       {error && <p className="expense-form__error">{error}</p>}
 
       <div className="expense-form__group">
@@ -97,7 +111,9 @@ function ExpenseForm({ onAddExpense, editExpense }) {
         </select>
       </div>
 
-      <button type="submit" className="expense-form__submit">Lagre utgift</button> 
+      <button type="submit" className="expense-form__submit">
+        {editExpense ? 'Oppdater utgift' : 'Lagre utgift'}
+      </button>
     </form>
   );
 }
