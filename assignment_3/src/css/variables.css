@@ -1,0 +1,17 @@
+:root {
+    --font-family-regular: "Roboto-Regular";
+    --font-family-bold: "Roboto-Bold";
+    --font-family-new: "Oswald";
+  
+    --primary-color: #4caf50; /* Grønn til knapper */
+    --secondary-color: #f5f5f5; /* Lys bakgrunn */
+    --accent-color: #ff5722; /* Rød-oransje aksent */
+    --text-color: #333333; /* Standard tekstfarge */
+  
+    --spacing-small: 0.5rem;
+    --spacing-medium: 1rem;
+    --spacing-large: 2rem;
+  
+    --border-radius: 0.5rem;
+  }
+  
