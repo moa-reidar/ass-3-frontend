@@ -21,24 +21,43 @@ function App() {
     category: ''
   });
 
+  // Holder styr på hvilken utgift som redigeres
+  const [editExpense, setEditExpense] = useState(null);
+
   // Funksjon som oppdaterer filtrene
   const handleFilterChange = (newFilters) => {
     setFilters(newFilters);
   };
 
-  // Funksjon for å legge til en ny utgift
+  // Funksjon for å legge til en ny utgift 
   const handleAddExpense = (expenseData) => {
-    const newExpense = {
-      ...expenseData,
-      id: Math.random().toString(),
-    };
-    setExpenses((prev) => [newExpense, ...prev]);
-    console.log('Lagret utgift:', newExpense);
+    if (editExpense) {
+      setExpenses((prevExpenses) =>
+        prevExpenses.map((expense) =>
+          expense.id === editExpense.id ? { ...expenseData, id: expense.id } : expense
+        )
+      );
+    } else {
+      const newExpense = {
+        ...expenseData,
+        id: Math.random().toString(),
+      };
+      setExpenses((prev) => [newExpense, ...prev]);
+      console.log('Lagret utgift:', newExpense);
+    }
   };
 
   // Funksjon for å slette en utgift
   const handleDeleteExpense = (expenseId) => {
     setExpenses((prevExpenses) => prevExpenses.filter((expense) => expense.id !== expenseId));
+  };
+
+  // Funksjon for å velge en utgift til redigering
+  const handleEditExpense = (expenseId) => {
+    const expenseToEdit = expenses.find((expense) => expense.id === expenseId);
+    if (expenseToEdit) {
+      setEditExpense(expenseToEdit);
+    }
   };
 
   // Lagrer til localStorage hver gang expenses endres
@@ -65,9 +84,11 @@ function App() {
       />
       
       <ExpenseForm onAddExpense={handleAddExpense} />
+      
       <ExpenseList 
         expenses={filteredExpenses}
         onDeleteExpense={handleDeleteExpense}
+        onEditExpense={handleEditExpense} 
       />
       <TotalExpense expenses={filteredExpenses} />
     </div>
