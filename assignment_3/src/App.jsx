@@ -26,6 +26,7 @@ function App() {
     setFilters(newFilters);
   };
 
+  // Funksjon for å legge til en ny utgift
   const handleAddExpense = (expenseData) => {
     const newExpense = {
       ...expenseData,
@@ -33,6 +34,11 @@ function App() {
     };
     setExpenses((prev) => [newExpense, ...prev]);
     console.log('Lagret utgift:', newExpense);
+  };
+
+  // Funksjon for å slette en utgift
+  const handleDeleteExpense = (expenseId) => {
+    setExpenses((prevExpenses) => prevExpenses.filter((expense) => expense.id !== expenseId));
   };
 
   // Lagrer til localStorage hver gang expenses endres
@@ -59,7 +65,10 @@ function App() {
       />
       
       <ExpenseForm onAddExpense={handleAddExpense} />
-      <ExpenseList expenses={filteredExpenses} />
+      <ExpenseList 
+        expenses={filteredExpenses}
+        onDeleteExpense={handleDeleteExpense}
+      />
       <TotalExpense expenses={filteredExpenses} />
     </div>
   );
