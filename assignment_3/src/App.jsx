@@ -29,7 +29,7 @@ function App() {
     setFilters(newFilters);
   };
 
-  // Funksjon for å legge til en ny utgift 
+  // Funksjon for å legge til en ny utgift eller oppdatere en eksisterende
   const handleAddExpense = (expenseData) => {
     if (editExpense) {
       setExpenses((prevExpenses) =>
@@ -37,6 +37,7 @@ function App() {
           expense.id === editExpense.id ? { ...expenseData, id: expense.id } : expense
         )
       );
+      setEditExpense(null); 
     } else {
       const newExpense = {
         ...expenseData,
@@ -83,12 +84,13 @@ function App() {
         onFilterChange={handleFilterChange}
       />
       
-      <ExpenseForm onAddExpense={handleAddExpense} />
+      
+      <ExpenseForm onAddExpense={handleAddExpense} editExpense={editExpense} />
       
       <ExpenseList 
         expenses={filteredExpenses}
         onDeleteExpense={handleDeleteExpense}
-        onEditExpense={handleEditExpense} 
+        onEditExpense={handleEditExpense}
       />
       <TotalExpense expenses={filteredExpenses} />
     </div>
