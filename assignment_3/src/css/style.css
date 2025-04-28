@@ -3,73 +3,88 @@
     max-width: 900px;
     margin: var(--spacing-large) auto;
     padding: var(--spacing-medium);
-  }
-  
-  .app__title {
+}
+
+.app__title {
     font-family: var(--font-family-new);
     font-size: 2rem;
     text-align: center;
     margin-bottom: var(--spacing-large);
-  }
-  
-  .expense-form,
-  .expense-list,
-  .total-expense,
-  .filter {
+}
+
+.expense-form,
+.expense-list,
+.total-expense,
+.filter {
     background: white;
     padding: var(--spacing-medium);
     margin-bottom: var(--spacing-medium);
     border-radius: var(--border-radius);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Komponent-detaljer */
-  .expense-form__group {
-    margin-bottom: var(--spacing-medium);
-  }
-  
-  .expense-form__title {
+}
+
+/* Komponent-detaljer */
+.expense-form__group label {
+    display: block;
+    margin-bottom: var(--spacing-small);
+    font-weight: bold;
+}
+
+.expense-form__group input,
+.expense-form__group select {
+    width: 100%;
+    padding: var(--spacing-small);
+    border-radius: var(--border-radius);
+    border: 1px solid #ccc;
+}
+
+.expense-form__title {
     font-family: var(--font-family-bold);
     font-size: 1.5rem;
     margin-bottom: var(--spacing-medium);
-  }
-  
-  .expense-form__error {
+}
+
+.expense-form__error {
     color: red;
     margin-bottom: var(--spacing-medium);
-  }
-  
-  .expense-form__submit {
+}
+
+.expense-form__submit {
     background-color: var(--primary-color);
     color: white;
     border: none;
     padding: var(--spacing-small) var(--spacing-medium);
     border-radius: var(--border-radius);
     cursor: pointer;
-  }
-  
-  .expense-form__submit:hover {
+    margin-top: var(--spacing-medium);
+}
+
+.expense-form__submit:hover {
     background-color: #388e3c;
-  }
-  
-  .expense-item {
+}
+
+.expense-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: var(--spacing-small);
-  }
-  
-  .expense-item__info {
+}
+
+.expense-item__info {
     flex-grow: 1;
-  }
-  
-  .expense-item__actions {
+}
+
+.expense-item__amount {
+    margin-right: var(--spacing-small); 
+}
+
+.expense-item__actions {
     display: flex;
     gap: var(--spacing-small);
-  }
-  
-  .expense-item__edit,
-  .expense-item__delete {
+}
+
+.expense-item__edit,
+.expense-item__delete {
     background: var(--accent-color);
     color: white;
     border: none;
@@ -77,64 +92,63 @@
     border-radius: var(--border-radius);
     cursor: pointer;
     font-size: 0.9rem;
-  }
-  
-  .expense-item__edit:hover,
-  .expense-item__delete:hover {
+}
+
+.expense-item__edit:hover,
+.expense-item__delete:hover {
     opacity: 0.8;
-  }
-  
-  .total-expense__title {
+}
+
+.total-expense__title {
     font-family: var(--font-family-bold);
     font-size: 1.5rem;
     margin-bottom: var(--spacing-small);
     text-align: center;
-  }
-  
-  .total-expense__amount {
+}
+
+.total-expense__amount {
     font-size: 1.5rem;
     text-align: center;
     color: var(--primary-color);
-  }
-  
-  .filter__group {
+}
+
+.filter__group {
     margin-bottom: var(--spacing-medium);
-  }
-  
-  .filter label {
+}
+
+.filter label {
     font-weight: bold;
     display: block;
     margin-bottom: var(--spacing-small);
-  }
-  
-  .filter select {
+}
+
+.filter select {
     width: 100%;
     padding: var(--spacing-small);
     border-radius: var(--border-radius);
     border: 1px solid #ccc;
-  }
-  
-  .expense-list__empty {
+}
+
+.expense-list__empty {
     text-align: center;
     color: #777;
     font-style: italic;
-  }
-  
+}
 
-  .expense-list__items {
+.expense-list__items {
     list-style: none;
     padding: 0;
-  }
-  
-  .expense-form--editing {
+}
+
+.expense-form--editing {
     background-color: #fff7e6; /* Lys oransje bakgrunn */
     border: 2px solid var(--accent-color);
-  }
-  
-  .expense-form--editing .expense-form__submit {
+}
+
+.expense-form--editing .expense-form__submit {
     background-color: var(--accent-color);
-  }
-  
-  .expense-form--editing .expense-form__submit:hover {
+}
+
+.expense-form--editing .expense-form__submit:hover {
     background-color: #e64a19;
-  }
+}
