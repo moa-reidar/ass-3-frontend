@@ -152,3 +152,59 @@
 .expense-form--editing .expense-form__submit:hover {
     background-color: #e64a19;
 }
+
+/* RESPONSIVITET */
+
+/* opptil 600px */
+@media (max-width: 600px) {
+    .expense-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .expense-item__actions {
+      margin-top: var(--spacing-small);
+    }
+  
+    .app {
+      padding: var(--spacing-small);
+    }
+  
+    .expense-form,
+    .expense-list,
+    .total-expense,
+    .filter {
+      padding: var(--spacing-small);
+    }
+  }
+  
+  /* opptil 900px */
+  @media (max-width: 900px) {
+    .app {
+      max-width: 90%;
+    }
+  
+    .expense-item__amount {
+      font-size: 1rem;
+    }
+  
+    .expense-form__title,
+    .total-expense__title {
+      font-size: 1.4rem;
+    }
+  }
+  
+  /* opptil 1200px */
+  @media (max-width: 1200px) {
+    .app__title {
+      font-size: 1.8rem;
+    }
+  
+    .expense-form__submit,
+    .expense-item__edit,
+    .expense-item__delete {
+      font-size: 0.85rem;
+      padding: var(--spacing-small);
+    }
+  }
+  
