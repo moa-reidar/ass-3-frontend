@@ -30,19 +30,24 @@ function ExpenseForm({ onAddExpense, editExpense }) {
       [name]: value,
     }));
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-
+  
+    // Validering
     if (!formData.title || !formData.amount || !formData.date || !formData.category) {
       setError('Alle felt må fylles ut');
       return;
     }
-
+  
+    if (parseFloat(formData.amount) <= 0) {
+      setError('Beløp må være større enn 0');
+      return;
+    }
+  
     setError('');
-
+  
     onAddExpense(formData);
-
+  
     setFormData({
       title: '',
       amount: '',
@@ -50,6 +55,7 @@ function ExpenseForm({ onAddExpense, editExpense }) {
       category: '',
     });
   };
+  
 
   return (
     <form className={`expense-form ${editExpense ? 'expense-form--editing' : ''}`} onSubmit={handleSubmit}>
