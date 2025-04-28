@@ -1,12 +1,44 @@
-# React + Vite
+# Expense Tracker App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Description
+This is a simple and responsive Expense Tracker built with React.  
+The purpose of the project is to allow users to add, edit, delete, and filter expenses while keeping data stored locally in the browser.  
+The app is created as part of an assignment for Frontend Development.
 
-Currently, two official plugins are available:
+## Installation
+1. Clone the repository:
+git clone https://github.com/moa-reidar/ass-3-frontend.git
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2. Navigate to the project directory:
+cd ass-3-frontend
 
-## Expanding the ESLint configuration
+3. Install dependencies:
+npm install
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+4. Start the development server:
+npm run dev
+
+
+## Usage Instructions
+- Add new expenses by filling out the form and clicking "Save Expense".
+- Edit an existing expense by clicking "Edit" on the corresponding item.
+- Delete an expense by clicking "Delete" (with confirmation).
+- Filter expenses by month or category using the filter options.
+- Total expenses are calculated automatically.
+- All data is saved locally using LocalStorage.
+
+## Features
+- Add, edit, and delete expenses
+- Filter expenses by month and category
+- Total expense calculation
+- Data persistence with LocalStorage
+- Responsive design for mobile, tablet, and desktop
+- Clean and structured code using functional components and React Hooks
+
+## License
+This project is licensed under the Høyskolen Kristiania.
+
+## Contact
+- **Name:** Moa
+- **Email:** moa@live.no
+- **GitHub:** [https://github.com/moa-reidar/ass-3-frontend.git](https://github.com/moa-reidar/ass-3-frontend.git)
