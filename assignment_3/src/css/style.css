@@ -1,3 +1,19 @@
+@font-face {
+    font-family: "Roboto-Regular";
+    src: url(../assets/fonts/Roboto-Regular.ttf);
+  }
+  
+@font-face {
+    font-family: "Roboto-Bold";
+    src: url(../assets/fonts/Roboto-Bold.ttf);
+  }
+  
+  @font-face {
+    font-family: "Oswald";
+    src: url(../assets/fonts/Oswald-VariableFont_wght.ttf);
+  }
+
+
 /* Grunnstruktur */
 .app {
     max-width: 900px;
@@ -6,7 +22,7 @@
 }
 
 .app__title {
-    font-family: var(--font-family-new);
+    font-family: var(--font-family-new),Arial, Helvetica, sans-serif;
     font-size: 2rem;
     text-align: center;
     margin-bottom: var(--spacing-large);
