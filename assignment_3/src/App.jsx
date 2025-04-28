@@ -50,8 +50,12 @@ function App() {
 
   // Funksjon for å slette en utgift
   const handleDeleteExpense = (expenseId) => {
-    setExpenses((prevExpenses) => prevExpenses.filter((expense) => expense.id !== expenseId));
+    const confirmDelete = window.confirm('Er du sikker på at du vil slette denne utgiften?');
+    if (confirmDelete) {
+      setExpenses((prevExpenses) => prevExpenses.filter((expense) => expense.id !== expenseId));
+    }
   };
+  
 
   // Funksjon for å velge en utgift til redigering
   const handleEditExpense = (expenseId) => {
