@@ -1,3 +1,4 @@
+/* Grunnstruktur */
 .app {
     max-width: 900px;
     margin: var(--spacing-large) auto;
@@ -21,6 +22,8 @@
     border-radius: var(--border-radius);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
+  
+  /* Komponent-detaljer */
   .expense-form__group {
     margin-bottom: var(--spacing-medium);
   }
@@ -117,3 +120,21 @@
     font-style: italic;
   }
   
+
+  .expense-list__items {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .expense-form--editing {
+    background-color: #fff7e6; /* Lys oransje bakgrunn */
+    border: 2px solid var(--accent-color);
+  }
+  
+  .expense-form--editing .expense-form__submit {
+    background-color: var(--accent-color);
+  }
+  
+  .expense-form--editing .expense-form__submit:hover {
+    background-color: #e64a19;
+  }

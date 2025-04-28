@@ -52,7 +52,7 @@ function ExpenseForm({ onAddExpense, editExpense }) {
   };
 
   return (
-    <form className="expense-form" onSubmit={handleSubmit}>
+    <form className={`expense-form ${editExpense ? 'expense-form--editing' : ''}`} onSubmit={handleSubmit}>
       <h2 className="expense-form__title">
         {editExpense ? 'Rediger utgift' : 'Legg til utgift'}
       </h2>
