@@ -1,3 +1,6 @@
+Netlify link: https://rainbow-duckanoo-c82139.netlify.app/
+Github link https://github.com/moa-reidar/ass-3-frontend.git
+
 # Expense Tracker App
 
 ## Project Description
