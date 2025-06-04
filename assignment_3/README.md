@@ -41,4 +41,4 @@ This project is licensed under the Høyskolen Kristiania.
 ## Contact
 - **Name:** Moa
 - **Email:** moa@live.no
-- **GitHub:** [https://github.com/moa-reidar/ass-3-frontend.git](https://github.com/moa-reidar/ass-3-frontend.git)
+- **GitHub:** [https://github.com/moa-reidar/ass-3-frontend.git]
